@@ -79,6 +79,7 @@ li {
 }
 .menu__item_action {
   border-bottom: 2px solid #fcbb08;
+  transition: 0.2s linear;
 }
 .menu__item:last-child {
   margin-right: 0px;
@@ -100,8 +101,6 @@ li {
 
   width: 100%;
   height: 100%;
-
-  padding: 160px 0px;
 }
 .hero__text {
   display: flex;
@@ -127,7 +126,7 @@ li {
   text-transform: uppercase;
 }
 .hero__mouse {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .about {
   min-height: 100vh;
@@ -154,7 +153,7 @@ li {
   flex-direction: column;
 }
 .expertise__title {
-  margin-bottom: 90px;
+  margin-bottom: 110px;
 }
 .expertise__status-info {
   width: 100%;
@@ -172,33 +171,32 @@ li {
   margin-bottom: 3px;
 
   background: #373a39;
-
 }
-.status-info__progress-bars{
+.status-info__progress-bars {
   margin-right: 30px;
 }
-.status-info__item{
+.status-info__item {
   margin-bottom: 30px;
 }
-.status-info__text{
+.status-info__text {
   display: flex;
   justify-content: space-between;
 
   position: relative;
 }
-.status-info__title{
+.status-info__title {
   text-transform: uppercase;
 }
-.status-info__value{
+.status-info__value {
   position: absolute;
 }
-.status-info__value-1{
+.status-info__value-1 {
   right: 20px;
 }
-.status-info__value-2{
+.status-info__value-2 {
   right: 55px;
 }
-.status-info__value-3{
+.status-info__value-3 {
   right: 35px;
 }
 .expertise__services {
@@ -216,4 +214,149 @@ li {
 }
 .services__text h3 {
   margin-bottom: 15px;
+}
+.magic {
+  background: #f6f8fa;
+}
+.magic__wrap {
+  display: flex;
+}
+.magic__img {
+  margin-right: 130px;
+}
+.magic__text {
+  display: flex;
+  flex-direction: column;
+}
+.magic__title {
+  margin-bottom: 70px;
+}
+.portfolio__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 110px;
+}
+.portfolio__gallery {
+  display: flex;
+  width: 100%;
+}
+.gallery__column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  height: 100%;
+  margin-right: 25px;
+}
+.gallery__column:last-child {
+  margin-right: 0;
+}
+.gallery__item {
+  margin-bottom: 25px;
+  position: relative;
+}
+.gallery__img {
+  height: 100%;
+  width: 100%;
+  background: #66656596;
+}
+.gallery__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  background: #66656596;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+
+  transition: 0.5s linear;
+}
+.gallery__text h3 {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.gallery__text span {
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+.gallery__item:last-child {
+  margin-bottom: 0;
+}
+.gallery__column:nth-child(1) .gallery__item:nth-child(1) {
+  height: 494px;
+}
+.gallery__column:nth-child(1) .gallery__item:nth-child(2) {
+  height: 395px;
+}
+.gallery__column:nth-child(2) .gallery__item {
+  height: 288px;
+}
+.gallery__column:nth-child(3) .gallery__item:nth-child(1) {
+  height: 367px;
+}
+.gallery__column:nth-child(3) .gallery__item:nth-child(2) {
+  height: 523px;
+}
+.gallery__column:nth-child(4) .gallery__item:nth-child(1) {
+  height: 318px;
+}
+.gallery__column:nth-child(4) .gallery__item:nth-child(2) {
+  height: 572px;
+}
+.gallery__item {
+  background: #ededed;
+}
+.portfolio__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 42px 0px;
+  margin-top: 75px;
+
+  background: #f6f8fa;
+}
+.portfolio__link a {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+}
+.portfolio__quote {
+  padding: 130px;
+}
+.portfolio__quote blockquote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.portfolio__quote blockquote p {
+  margin-bottom: 50px;
+  font-size: 18px;
+  line-height: 36px;
+  font-style: italic;
+}
+.portfolio__quote blockquote span {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 32px;
+  color: #9E9E9E;
 }
