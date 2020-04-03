@@ -116,8 +116,82 @@ const tabs = (
   });
 };
 
+const slider = (
+  contentSelector,
+  preSelecrot,
+  nextSelector,
+  pointSelector,
+  dir
+) => {
+  let slideIndex = 1,
+    paused = false;
+
+  const items = document.querySelectorAll(contentSelector),
+    points = document.querySelectorAll(pointSelector);
+
+  function showSlides(n) {
+    if (n > items.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = items.length;
+    }
+
+    items.forEach(item => {
+      item.style.display = "none";
+    });
+
+    items[slideIndex - 1].style.display = "flex";
+  }
+
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+
+  try {
+    const prevBtn = document.querySelector(preSelecrot),
+      nextBtn = document.querySelector(nextSelector);
+
+    prevBtn.addEventListener("click", () => {
+      plusSlides(-1);
+      items[slideIndex - 1].classList.remove("slideInLeft");
+      items[slideIndex - 1].classList.add("slideInRight");
+    });
+
+    nextBtn.addEventListener("click", () => {
+      plusSlides(1);
+      items[slideIndex - 1].classList.remove("slideInRight");
+      items[slideIndex - 1].classList.add("slideInLeft");
+    });
+  } catch (error) {}
+
+  function activateAnimation() {
+    if (dir === "vertical") {
+      paused = setInterval(function() {
+        plusSlides(1);
+        items[slideIndex - 1].classList.add("slideInDown");
+      }, 5000);
+    } else {
+      paused = setInterval(function() {
+        plusSlides(1);
+        items[slideIndex - 1].classList.remove("slideInRight");
+        items[slideIndex - 1].classList.add("slideInLeft");
+      }, 5000);
+    }
+  }
+  activateAnimation();
+  items[0].parentNode.addEventListener("mouseenter", () => {
+    clearInterval(paused);
+  });
+  items[0].parentNode.addEventListener("mouseleave", () => {
+    activateAnimation();
+  });
+
+};
+
 window.addEventListener("DOMContentLoaded", () => {
   showHiddenItems(".gallery__item", ".gallery__text");
   scrollToAnchor();
   addActionClass(".menu__list", ".menu__item", "menu__item_action");
+  slider('.slider__content', '.slider__pre', '.slider__next','.slider__dot', 'horizontal');
 });
